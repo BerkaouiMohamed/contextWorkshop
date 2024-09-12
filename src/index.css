@@ -5,12 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: darkgrey;
+
+}
+*{
+  margin: 0;
+padding: 0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -113,10 +115,84 @@ align-items: center;
   width: 100px;
   object-fit: cover;
 }
+.cartbox button{
+  min-width: 70px;
+  height: 40px;
+  border: none;
+background-color: violet;
+}
 .cart-container{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
 gap: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+
+.sidebar{
+  width: 30%;
+  height: calc(100vh - 70px);
+  position: fixed;
+  left: 0;
+  top: 70px;
+  background-color: #cbf3cd;
+
+}
+.outlet{
+  width: 70%;
+  position: relative;
+  left: 30%;
+}
+.productbox{
+  display: flex;
+  gap: 20px;
+  width: 80%;
+  justify-content: space-between;
+background-color: red;  
+margin: 20px 0;
+}
+.productbox div{
+  display: flex ;
+  gap: 10px;
 }

@@ -4,7 +4,7 @@ import Box from "../componetes/Box";
 import { cakeContext } from "../store/CakeStore";
 
 function Home() {
-  const products = useContext(productsContext);
+  const {products} = useContext(productsContext);
   const cakes = useContext(cakeContext);
   const homeProducts = products.slice(0, 4);
   const cakesHome = cakes.slice(0, 4);

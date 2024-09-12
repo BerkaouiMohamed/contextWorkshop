@@ -12,7 +12,7 @@ function ProductsStore({ children }) {
     .then(res=>dispatchProducts(fetchaction(res.data)))
   },[])
   return (
-    <productsContext.Provider value={products}>
+    <productsContext.Provider value={{products,dispatchProducts}}>
       {children}
     </productsContext.Provider>
   );

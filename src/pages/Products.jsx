@@ -3,7 +3,7 @@ import { productsContext } from '../store/ProductsStore'
 import Box from '../componetes/Box'
 
 function Products() {
-  const products=useContext(productsContext)
+  const {products}=useContext(productsContext)
 
   return (
     <div className='products'>
