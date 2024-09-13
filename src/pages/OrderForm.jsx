@@ -13,7 +13,7 @@ const OrderForm = () => {
   function handleSubmit(e){
     e.preventDefault()
     const order=cart.map(e=>{return {product:e.product.id,quantity:e.quantity}})
-    axios.post("http://localhost:3000/orders",{user:formData,order:order})
+    axios.post("http://localhost:3000/orders",{user:formData,order:order,status:"pending"})
     .then(res=>{
         if(res.status===201||res.status===200){
             console.log(res)

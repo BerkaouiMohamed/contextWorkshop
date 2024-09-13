@@ -6,6 +6,7 @@ function orderReducer(state, action) {
   switch (action.type) {
     case "FETCHORDERS":
       return action.payload;
+      case "UPDATEORDER":return state.map(order=>order.id===action.payload.id?action.payload:order)
     default:
       return state;
   }
@@ -13,6 +14,9 @@ function orderReducer(state, action) {
 
 const fetchOrdersAction=function(param){
     return {type:"FETCHORDERS",payload:param}
+}
+export const updateOrderAction=function(param){
+  return {type:"UPDATEORDER",payload:param}
 }
 function OrderStore({ children }) {
   const [orders, dispatchOrders] = useReducer(orderReducer, []);

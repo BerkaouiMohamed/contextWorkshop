@@ -5,7 +5,6 @@ import { BarChart } from "@mui/x-charts";
 import OrderStore from "../store/orderStore/OrderStore";
 function DashbordAdmin() {
     const location=useLocation()
-    console.log(location)
   return (
     <OrderStore>
     <div>

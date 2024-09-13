@@ -1,11 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../store/cartStore/CartStore";
+import { useScroll, useTransform,motion } from "framer-motion";
 
 function Navbar() {
+  const { scrollY } = useScroll()
+  console.log("🚀 ~ Navbar ~ scrollY:", scrollY)
+const x = useTransform(
+  scrollY,
+  [10, 200,400],
+  [`translateX(10px)`,"translateX(200px)","translateX(700px)"],
+
+)
   const {cart}=useContext(cartContext)
   return (
-    <div className="navbar">
+    <motion.div style={{transform:x}} className="navbar">
       <h2>logo</h2>
       <div>
         <Link to="/">
@@ -21,7 +30,7 @@ function Navbar() {
           <p style={{display:!cart.length?"none":"block"}}>cart</p>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
